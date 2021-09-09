@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
+    <children>
+        <MenuBar layoutX="-1.0" prefHeight="29.0" prefWidth="784.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="imageChoice" mnemonicParsing="false" onAction="#imgChoose" text="Choose Image File" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane layoutX="-1.0" layoutY="29.0" prefHeight="721.0" prefWidth="784.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Original">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1060.0">
+                            <children>
+                                <ImageView id="Original Image" fx:id="original" fitHeight="512.0" fitWidth="512.0" layoutX="155.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Conversion">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView id="Original Image" fx:id="BlackandWhite" fitHeight="512.0" fitWidth="512.0" layoutX="155.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                                <Button layoutX="37.0" layoutY="532.0" mnemonicParsing="false" onAction="#changeHue" text="Change Hue" />
+                                <Slider fx:id="hueSlider" blockIncrement="5.0" layoutX="157.0" layoutY="525.0" majorTickUnit="15.0" max="360.0" prefHeight="38.0" prefWidth="507.0" showTickLabels="true" showTickMarks="true" value="180.0" />
+                                <Text layoutX="379.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hue Value" wrappingWidth="62.38592529296875" />
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Box Display">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Pane layoutX="146.0" layoutY="14.0" prefHeight="512.0" prefWidth="512.0">
+                                    <children>
+                                        <ImageView id="viewBoxs" fx:id="viewBoxs" fitHeight="512.0" fitWidth="512.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button layoutX="35.0" layoutY="579.0" mnemonicParsing="false" onAction="#createBoxes" text="Create Boxes" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Gray">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="greyScaleImgViewer" fitHeight="150.0" fitWidth="200.0" layoutX="164.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Red">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="redOnlyImgViewer" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Green">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="greenOnlyImgViewer" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Blue">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="blueOnlyImgViewer" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</Pane>
